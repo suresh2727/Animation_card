@@ -1,17 +1,55 @@
 *{
     margin: 0;
-    padding: 0;
+ 
     box-sizing: border-box;
     font-family: "Open Sans", sans-serif;
-    margin: 5px;
+    /* margin: 5px; */
+}
+body{
+    padding: 1rem;
+}
+
+.card-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(300px , 1fr));
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+
+.card-image{
+    overflow: hidden;
+    
+
+}
+
+.card-heading{
+    padding: var(--padding);
+}
+.card-image>img{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+    max-height: 200px;
+    object-position: center;
+    padding: 0px;
+    transition: 200ms transform ease-in-out;
 }
 
 .card{
-    padding: 1rem;
+    --padding: 1rem;
     border: 1px solid black;
     border-radius: 0.25rem;
     background-color: white;
+    overflow: hidden;
+   
 
+}
+
+.card.card-shadow{
+    border: none;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.489);
 }
 
 .card-heading{
@@ -21,10 +59,21 @@
 
 .card-body{
     margin-top: 0.9rem;
+    padding:  0 var(--padding);
+    
 }
 
 .card-footer{
     margin-top: 1rem;
+    padding-top: 0;
+    padding: var(--padding);
+
+
+}
+
+.card:hover > .card-image >img{
+    transform: scale(1.025);
+    cursor: pointer;
 }
 
 .btn{
@@ -41,13 +90,19 @@
    background-color: white;
    color: rgb(56, 56, 125);
    border: 1px solid rgb(56, 56, 125);
-
-
 }
 
-.btn.btn-outline:hover{
+.btn1:hover{
+    color: black;
+    background-color:  rgb(146, 146, 186); ;
+}
+.btn-outline:hover{
     background-color: rgb(146, 146, 186);
     cursor: pointer;
     color: white;
+}
+
+.btn + .btn {
+    margin-left: 0.7rem;
 }
 
